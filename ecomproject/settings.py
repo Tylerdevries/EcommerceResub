@@ -1,4 +1,4 @@
-Tylerdevries/EcommerceProjectfrom pathlib import Path
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -9,6 +9,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-(jehif+b-&$**=_a$j82fpcg=z4t=5z06=-hx(lk9-#qk!baw_'
+
+CSRF_TRUSTED_ORIGINS = ['https://8000-tylerdevrie-ecommercere-4pdlllgxl39.ws-eu87.gitpod.io']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -24,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.humanize',
     'django.contrib.staticfiles',
     "ecomapp",
 ]
@@ -107,7 +110,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "static_cdn"
-MEDIA_URL = "/media"
+MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 # Default primary key field type
