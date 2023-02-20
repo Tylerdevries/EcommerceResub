@@ -2,7 +2,9 @@ from django.views.generic import View, TemplateView, CreateView, FormView, Detai
 from django.contrib.auth import authenticate, login, logout
 from .forms import CheckoutForm, CustomerRegistrationForm, CustomerLoginForm
 from django.shortcuts import render, redirect
+from django.core.paginator import Paginator
 from django.urls import reverse_lazy
+from django.db.models import Q
 from .models import *
 
 
@@ -23,7 +25,12 @@ class HomeView(EcomMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['myname'] = "Dipak Niroula"
-        context['product_list'] = Product.objects.all().order_by("-id")
+        all_products = Product.objects.all().order_by("-id")
+        paginator = Paginator(all_products, 8)
+        page_number = self.request.GET.get('page')
+        print(page_number)
+        product_list = paginator.get_page(page_number)
+        context['product_list'] = product_list
         return context
 
 
@@ -279,6 +286,19 @@ class CustomerOrderDetailView(DetailView):
         else:
             return redirect("/login/?next=/profile/")
         return super().dispatch(request, *args, **kwargs)
+
+
+class SearchView(TemplateView):
+    template_name = "search.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        kw = self.request.GET.get("keyword")
+        results = Product.objects.filter(
+            Q(title__icontains=kw) | Q(description__icontains=kw) | Q(return_policy__icontains=kw))
+        print(results)
+        context["results"] = results
+        return context
 
 
 # admin pages

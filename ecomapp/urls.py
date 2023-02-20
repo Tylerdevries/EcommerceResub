@@ -4,6 +4,8 @@ from .views import *
 
 app_name = "ecomapp"
 urlpatterns = [
+
+    # Client side pages
     path("", HomeView.as_view(), name="home"),
     path("about/", AboutView.as_view(), name="about"),
     path("contact-us/", ContactView.as_view(), name="contact"),
@@ -26,6 +28,9 @@ urlpatterns = [
     path("profile/", CustomerProfileView.as_view(), name="customerprofile"),
     path("profile/order-<int:pk>/", CustomerOrderDetailView.as_view(),
          name="customerorderdetail"),
+
+    path("search/", SearchView.as_view(), name="search"),
+    # Admin Side pages
 
     path("admin-login/", AdminLoginView.as_view(), name="adminlogin"),
     path("admin-home/", AdminHomeView.as_view(), name="adminhome"),
