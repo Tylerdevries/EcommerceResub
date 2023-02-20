@@ -13,8 +13,8 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-tylerdevrie-ecommercere-a0ulvljp3vc.ws-eu87.gitpod.io']
-DEBUG = True
+CSRF_TRUSTED_ORIGINS = ['https://8000-tylerdevrie-ecommercere-a0ulvljp3vc.ws-eu87.gitpod.io', 'https://filmcrewtodo.herokuapp.com']
+DEBUG = False
 
 ALLOWED_HOSTS = ['fromnepaltoireland.herokuapp.com', 'localhost']
 
