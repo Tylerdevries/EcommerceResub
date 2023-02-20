@@ -1,108 +1,167 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# From Nepal to Ireland
 
-Welcome Tylerdevries,
+This is the final resubmission of this project.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+This repository houses an augmented version with changes made to failed criteria. 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+No changes were made to passed criteria. 
 
-## Gitpod Reminders
+The goal of this site is to advertise and sell products stocked in Nepal.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Users of this site will be able to register for site. Once registered they can add items to their cart and buy items through a checkout with a third party payment processor. 
 
-`python3 -m http.server`
+The site is targeting towards use for individuals who are from nepal and living in Ireland (the currency bring used is Rs) or users looking buy items at a discount as their are coming from nepalese suppliers.
 
-A blue button should appear to click: _Make Public_,
+![home page](https://user-images.githubusercontent.com/93283135/220038835-1f0921d4-718f-44da-8422-f9a69009a41a.PNG)
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+## Features:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
+### General Navigation:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+I Designed the site with UX in mind.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+Users are initially directed to the home page where they can browse the items being sold.
 
-------
+They can access more information in regards to each item by clicking on the names of the products.
 
-## Release History
+Users can add items from cart without going into the detail.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+Users can access the categories, cart, account tabs from here.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![login](https://user-images.githubusercontent.com/93283135/220040267-c767d2e3-ff5e-46a1-81d7-94c2c2226b91.PNG)
+![register](https://user-images.githubusercontent.com/93283135/220040276-8e1e79a1-20a4-43e5-bb03-01be48849dd1.PNG)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![loginview](https://user-images.githubusercontent.com/93283135/220040760-486a9808-2046-4a41-9395-66623a8ada73.PNG)
+![regisview](https://user-images.githubusercontent.com/93283135/220040801-0913fc37-2c64-454f-8b14-795baa73b870.PNG)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### The Login and Register Pages:
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+The login page first appears, if the user doesnt have an account they prompted to register.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+It asks the user for a username and password. Djangos built in class for login authorization will validate the information given through the database.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+Below the login button, users can register for the app by follow the link titled register. 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+A screenshot of the view for this page is shown above. This view is called on within the urls.py file.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+When taken to the register page the user can sign up for the app.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+Upon sign up completion the user is redirected to the home page.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+The view used here is displayed above. This confirms authorisation and adds the user to the database. 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+This view is called on within the urls.py.
 
-------
+![search](https://user-images.githubusercontent.com/93283135/220043188-652ff420-8c8c-49d8-9ec4-462dd790a6e5.PNG)
 
-## FAQ about the uptime script
+![search result](https://user-images.githubusercontent.com/93283135/220043196-ac86d136-6298-42bc-a59f-c9a0ed142b2f.PNG)
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### The Search bar:
 
-**How will this affect me?**
+The search bar searches through all the products by name and gives a result on a seperate page.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+![cart view](https://user-images.githubusercontent.com/93283135/220043492-63dda8ca-9c1b-4eec-b0d3-d01f4694c176.PNG)
+![checkout view](https://user-images.githubusercontent.com/93283135/220043517-933ace83-288a-4249-995d-6e8b86c7be76.PNG)
+![khalti](https://user-images.githubusercontent.com/93283135/220043528-41fd5dd6-0e23-4b86-b9a8-7901fed96a8c.PNG)
+![cart![cart](https://user-images.githubusercontent.com/93283135/220044164-c661dc07-9116-4790-9cfd-ff525bfe5c71.png)
+](ht![cart order](https://user-images.githubusercontent.com/93283135/220043621-abef793f-ce90-4ea9-9726-cf9e888ded19.PNG)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+Here the user can access the items added to the cart.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+They can empty the cart with one button.
 
-**So….?**
+They also change individual using CRUD functionality. They add anohter of an item. Take an item away or delete an item entirely from their cart.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+They can put in their detail in the order summary to the right and choose either cash on delivery or use the khalti gateway.
 
-**Can I opt out?**
+When moving to checkout the user can see a total of their order.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+Above is the view for the functioning of these pages.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+This view is called on within the urls.py file.
 
-**Anything more?**
+![categories](https://user-images.githubusercontent.com/93283135/220044671-b88dd946-c223-4bab-8545-784bcafd7952.PNG)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+![categories view](https://user-images.githubusercontent.com/93283135/220044681-cf639a62-2abf-465a-a2f8-59233c61fb99.PNG)
 
----
 
-Happy coding!
+### The Categories Page:
+
+This is the page where all the items are.
+
+The items are categorised here.
+
+Above is the view for the functioning of this page.
+
+![profile](https://user-images.githubusercontent.com/93283135/220045739-956dff2f-f9be-499e-875b-9533f3921a79.PNG)
+
+![profile view](https://user-images.githubusercontent.com/93283135/220045169-01de10b8-1a28-44e5-88fe-2e9fb7af2b5f.PNG)
+
+
+
+
+### Profile: 
+
+The profile page is accessible when the user is logged in.
+
+Here the user can view their unique detailed user information and previous orders.
+
+It shows detailed info in regard to previous orders.
+
+Above is the views for the functioning of these pages.
+
+
+## Major Errors in Development
+
+### Solved Bugs
+
+An initial issue I ran into with working with the most recent build of django was a crsf token issue when loading the homepage.
+
+I fixed this by amending the setting.py file and adding CSRF_TRUSTED_ORIGINS = [
+    (https://fromnepaltoireland.herokuapp.com)
+]
+
+I also ran into an issue when deploying my app to heroku. The issue was that the push to heroku main would failed due to using the newest version of pyhton.
+
+I solved this by using a runtime.txt file to change it to an earlier version when deploying.
+
+I also reverted to python-3.9.14 to solve this issue. 
+
+### Unfixed Bugs
+
+No unfixed bugs
+
+## Deployment
+
+The site was deployed through Heroku. 
+
+I used the following steps to deploy my page:
+1. Installed Psycopg2.
+2. I installed gunicorn and dj-database-url.
+3. I logged into my installed heroku within the repo terminal.
+4. I created a new heroku app linking the repo to my heroku account.
+5. I created a new ElephantSQL Database and linked it and cloudinary to my repo for use.
+6. I pushed all these changes to github and made my first deployment to heroku
+7. Created the Environment Variables within setting.py and env.py, gitpod workspaces and heroku.
+8. Hid the SECRET_KEY
+
+The livelink can be found here https://fromnepaltoireland.herokuapp.com/
+
+## Credits
+
+The prior walkthrough in this module of the course. 
+
+I used the following sites as sources and tutorials for django components.
+
+https://stackoverflow.com/
+
+https://ccbv.co.uk/projects/Django/4.0/
+
